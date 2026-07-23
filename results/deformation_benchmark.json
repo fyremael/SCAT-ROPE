@@ -1,0 +1,167 @@
+{
+  "config": {
+    "batch": 2,
+    "heads": 4,
+    "length": 128,
+    "head_dim": 64,
+    "trials": 8,
+    "num_modes": 4,
+    "slopes": [
+      0.02,
+      0.05,
+      0.1,
+      0.2
+    ],
+    "runtime_repeats": 5,
+    "device": "cpu",
+    "seed": 123,
+    "threads": 1,
+    "output_dir": "results"
+  },
+  "rows": [
+    {
+      "model": "RoPE",
+      "max_slope": 0.02,
+      "deformation_size": 0.14342004992067814,
+      "relative_logit_drift": 0.07325274823233485,
+      "near_drift": 0.016684844275005162,
+      "mid_drift": 0.06409507826901972,
+      "far_drift": 0.08951731538400054,
+      "attention_jsd": 1.7311833078181849e-07,
+      "seconds_per_forward": 0.0006686262000016541,
+      "runtime_vs_rope": 1.0
+    },
+    {
+      "model": "ScatRoPE-localized",
+      "max_slope": 0.02,
+      "deformation_size": 0.14342004992067814,
+      "relative_logit_drift": 0.009511188603937626,
+      "near_drift": 0.011408407299313694,
+      "mid_drift": 0.01018369069788605,
+      "far_drift": 0.004378189769340679,
+      "attention_jsd": 1.6040843653364334e-09,
+      "seconds_per_forward": 0.001839581600006568,
+      "runtime_vs_rope": 2.7512855463965025
+    },
+    {
+      "model": "ScatRoPE-demod",
+      "max_slope": 0.02,
+      "deformation_size": 0.14342004992067814,
+      "relative_logit_drift": 0.006950366776436567,
+      "near_drift": 0.010899566987063736,
+      "mid_drift": 0.008097284997347742,
+      "far_drift": 0.0016132528835441917,
+      "attention_jsd": 1.2009294114712077e-09,
+      "seconds_per_forward": 0.0018637822000073356,
+      "runtime_vs_rope": 2.7874800598641287
+    },
+    {
+      "model": "RoPE",
+      "max_slope": 0.05,
+      "deformation_size": 0.3785898983478546,
+      "relative_logit_drift": 0.17351491656154394,
+      "near_drift": 0.040612374898046255,
+      "mid_drift": 0.1511354437097907,
+      "far_drift": 0.21247227117419243,
+      "attention_jsd": 9.90971873449098e-07,
+      "seconds_per_forward": 0.0006686262000016541,
+      "runtime_vs_rope": 1.0
+    },
+    {
+      "model": "ScatRoPE-localized",
+      "max_slope": 0.05,
+      "deformation_size": 0.3785898983478546,
+      "relative_logit_drift": 0.02324033062905073,
+      "near_drift": 0.028142974013462663,
+      "mid_drift": 0.024727544747292995,
+      "far_drift": 0.010612172482069582,
+      "attention_jsd": 7.539675828116543e-09,
+      "seconds_per_forward": 0.001839581600006568,
+      "runtime_vs_rope": 2.7512855463965025
+    },
+    {
+      "model": "ScatRoPE-demod",
+      "max_slope": 0.05,
+      "deformation_size": 0.3785898983478546,
+      "relative_logit_drift": 0.017012814758345485,
+      "near_drift": 0.026906097773462534,
+      "mid_drift": 0.019705924903973937,
+      "far_drift": 0.003932154853828251,
+      "attention_jsd": 6.634241850322908e-09,
+      "seconds_per_forward": 0.0018637822000073356,
+      "runtime_vs_rope": 2.7874800598641287
+    },
+    {
+      "model": "RoPE",
+      "max_slope": 0.1,
+      "deformation_size": 0.8652160912752151,
+      "relative_logit_drift": 0.29050892777740955,
+      "near_drift": 0.07577392505481839,
+      "mid_drift": 0.2708288040012121,
+      "far_drift": 0.34160443022847176,
+      "attention_jsd": 2.6285154746119588e-06,
+      "seconds_per_forward": 0.0006686262000016541,
+      "runtime_vs_rope": 1.0
+    },
+    {
+      "model": "ScatRoPE-localized",
+      "max_slope": 0.1,
+      "deformation_size": 0.8652160912752151,
+      "relative_logit_drift": 0.04404689883813262,
+      "near_drift": 0.053648514207452536,
+      "mid_drift": 0.04692591028288007,
+      "far_drift": 0.01898126199375838,
+      "attention_jsd": 2.659660247594786e-08,
+      "seconds_per_forward": 0.001839581600006568,
+      "runtime_vs_rope": 2.7512855463965025
+    },
+    {
+      "model": "ScatRoPE-demod",
+      "max_slope": 0.1,
+      "deformation_size": 0.8652160912752151,
+      "relative_logit_drift": 0.032488880679011345,
+      "near_drift": 0.05180114880204201,
+      "mid_drift": 0.037491964641958475,
+      "far_drift": 0.0071380520821549,
+      "attention_jsd": 2.450891667393762e-08,
+      "seconds_per_forward": 0.0018637822000073356,
+      "runtime_vs_rope": 2.7874800598641287
+    },
+    {
+      "model": "RoPE",
+      "max_slope": 0.2,
+      "deformation_size": 1.7351658791303635,
+      "relative_logit_drift": 0.4589851126074791,
+      "near_drift": 0.1430410984903574,
+      "mid_drift": 0.44538505375385284,
+      "far_drift": 0.5250113271176815,
+      "attention_jsd": 6.419970986826229e-06,
+      "seconds_per_forward": 0.0006686262000016541,
+      "runtime_vs_rope": 1.0
+    },
+    {
+      "model": "ScatRoPE-localized",
+      "max_slope": 0.2,
+      "deformation_size": 1.7351658791303635,
+      "relative_logit_drift": 0.08653450477868319,
+      "near_drift": 0.1060079587623477,
+      "mid_drift": 0.09155590832233429,
+      "far_drift": 0.03852701187133789,
+      "attention_jsd": 1.0276728490410392e-07,
+      "seconds_per_forward": 0.001839581600006568,
+      "runtime_vs_rope": 2.7512855463965025
+    },
+    {
+      "model": "ScatRoPE-demod",
+      "max_slope": 0.2,
+      "deformation_size": 1.7351658791303635,
+      "relative_logit_drift": 0.06386718293651938,
+      "near_drift": 0.10261000413447618,
+      "mid_drift": 0.07321791257709265,
+      "far_drift": 0.0144342090934515,
+      "attention_jsd": 9.425709412980154e-08,
+      "seconds_per_forward": 0.0018637822000073356,
+      "runtime_vs_rope": 2.7874800598641287
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "model": "RoPE",
+    "n_seeds": 3,
+    "clean_accuracy_mean": 0.9505208333333334,
+    "clean_accuracy_std": 0.010618168248893289,
+    "warped_accuracy_mean": 0.9368489583333334,
+    "warped_accuracy_std": 0.012075024082676697,
+    "prediction_agreement_mean": 0.986328125,
+    "prediction_agreement_std": 0.009700302360515195,
+    "clean_loss_mean": 1.2358834246794383,
+    "clean_loss_std": 0.014284065307975595,
+    "warped_loss_mean": 1.2298614184061687,
+    "warped_loss_std": 0.008921992660436926
+  },
+  {
+    "model": "ScatRoPE-demod",
+    "n_seeds": 3,
+    "clean_accuracy_mean": 0.9993489583333334,
+    "clean_accuracy_std": 0.0009207119546699837,
+    "warped_accuracy_mean": 0.9986979166666666,
+    "warped_accuracy_std": 0.0009207119546699837,
+    "prediction_agreement_mean": 0.9993489583333334,
+    "prediction_agreement_std": 0.0009207119546699837,
+    "clean_loss_mean": 1.376074915130933,
+    "clean_loss_std": 0.006873152015933235,
+    "warped_loss_mean": 1.3689639816681545,
+    "warped_loss_std": 0.001883306145951559
+  },
+  {
+    "model": "ScatRoPE-localized",
+    "n_seeds": 3,
+    "clean_accuracy_mean": 0.9973958333333334,
+    "clean_accuracy_std": 0.0018414239093399675,
+    "warped_accuracy_mean": 0.9986979166666666,
+    "warped_accuracy_std": 0.0009207119546699837,
+    "prediction_agreement_mean": 0.9986979166666666,
+    "prediction_agreement_std": 0.0009207119546699837,
+    "clean_loss_mean": 1.3373206555843353,
+    "clean_loss_std": 0.015798638158442502,
+    "warped_loss_mean": 1.313727339108785,
+    "warped_loss_std": 0.007059077817055064
+  }
+]
