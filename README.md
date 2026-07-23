@@ -76,8 +76,37 @@ The synthetic benchmark only checks the intended inductive bias: reduced sensiti
 
 ## Included validation results
 
-All five unit tests pass on PyTorch 2.10 CPU. They cover rotary norm preservation, common-translation invariance, recovery of standard RoPE in the infinite-scale/no-demodulation limit, monotone warp generation, and regularizer backpropagation.
+All eight unit tests pass on CPU, including the Phase-II harness checks. They cover rotary norm preservation, common-translation invariance, recovery of standard RoPE in the infinite-scale/no-demodulation limit, monotone warp generation, regularizer backpropagation, exact-offset probe validity, long-context execution, and matched regularizer gradients.
 
 In the included synthetic deformation benchmark (`L=128`, `B=2`, `H=4`, `D_h=64`, eight warps per setting), a maximum warp slope of 0.10 produced normalized logit drift of 0.29051 for RoPE and 0.03249 for demodulating ScatRoPE, an 88.8% reduction. Far-distance drift fell from 0.34160 to 0.00714, a 97.9% reduction. The explicit unfused CPU implementation took 2.79 times the RoPE forward time in this configuration.
 
 In the included three-seed two-copy recency task, models trained only on uniform positions. Mean clean/warped accuracy was 0.9505/0.9368 for RoPE, 0.9974/0.9987 for localized ScatRoPE, and 0.9993/0.9987 for demodulating ScatRoPE. This toy task is intentionally diagnostic and may favor localized recency structure; it is not evidence of language-model superiority.
+
+## Phase-II falsification suite
+
+The next-stage harness tests four claims independently rather than treating deformation stability as sufficient evidence:
+
+1. exact long-range offset discrimination;
+2. extrapolation to 2x and 4x the reference context;
+3. clean and warped language-model perplexity;
+4. benefit over RoPE trained with the identical deformation regularizer.
+
+Run the deterministic harness check with:
+
+```bash
+python benchmarks/falsification_suite.py \
+  --config configs/falsification_quick.json \
+  --output-dir results/falsification/quick
+```
+
+Run the pre-registered scientific configuration against local byte-identical corpora with:
+
+```bash
+python benchmarks/falsification_suite.py \
+  --config configs/falsification_full.json \
+  --train-file data/train.txt \
+  --valid-file data/valid.txt \
+  --output-dir results/falsification/full
+```
+
+See [`FALSIFICATION_PROTOCOL.md`](FALSIFICATION_PROTOCOL.md) for the hypotheses, fixed thresholds, matched controls, and interpretation rules. Synthetic-corpus perplexity is explicitly marked as smoke-test evidence and cannot establish language-model superiority.
